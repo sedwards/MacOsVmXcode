@@ -135,14 +135,14 @@ class MacOSVirtualMachineInstaller: NSObject {
         let bundleFd = mkdir(vmBundlePath, S_IRWXU | S_IRWXG | S_IRWXO)
         if bundleFd == -1 {
             if errno == EEXIST {
-                fatalError("Failed to create VM.bundle: the base directory already exists.")
+                NSLog("Failed to create VM.bundle: the base directory already exists.")
             }
-            fatalError("Failed to create VM.bundle.")
+            NSLog("Failed to create VM.bundle.")
         }
 
         let result = close(bundleFd)
         if result != 0 {
-            fatalError("Failed to close VM.bundle.")
+            NSLog("Failed to close VM.bundle.")
         }
     }
 

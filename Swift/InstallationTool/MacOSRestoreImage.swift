@@ -7,6 +7,7 @@ Download the latest macOS restore image from the network.
 
 import Foundation
 import Virtualization
+import AppKit
 
 #if arch(arm64)
 
