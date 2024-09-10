@@ -12,6 +12,10 @@ import Virtualization
 
 struct MacOSVirtualMachineConfigurationHelper {
     static func computeCPUCount() -> Int {
+
+/* @objc public class MacOSVirtualMachineConfigurationHelper: NSObject {
+    @objc public static func computeCPUCount() -> Int { */
+
         let totalAvailableCPUs = ProcessInfo.processInfo.processorCount
 
         var virtualCPUCount = totalAvailableCPUs <= 1 ? 1 : totalAvailableCPUs - 1
@@ -21,6 +25,7 @@ struct MacOSVirtualMachineConfigurationHelper {
         return virtualCPUCount
     }
 
+/* @objc public static */
     static func computeMemorySize() -> UInt64 {
         // Set the amount of system memory to 4 GB; this is a baseline value
         // that you can change depending on your use case.
